@@ -5,7 +5,7 @@
 **接口地址 :** `/personalized`
 *调用例子 :** `/personalized?limit=1`
  */
-export interface Personlized {
+export interface Personalized {
     id: number;
     type: number;
     name: string;
@@ -28,10 +28,8 @@ export interface PersonlizedNewSong {
     id: number;
     type: number;
     name: string;
-    copywriter: string;
     picUrl: string;
     canDislike: boolean;
-    trackNumberUpDateTime: number;
     song: PNSSong;
     alg: string;
 }
@@ -130,10 +128,8 @@ export interface PNSSongAlbum {
     commentThreadId: string;
     artists: PNSSongAlbumArtists[];
     subType: string;
-    transName: any;
     onSale: boolean;
     mark: number;
-    gapless: number;
     picId_str: string;
 }
 /**
@@ -174,7 +170,6 @@ export interface PNSSongAlbumArtists {
  * PNSSong生的
  */
 export interface PNSSongBMusic {
-    name?: any;
     id: number;
     size: number;
     extension: string;
@@ -188,7 +183,6 @@ export interface PNSSongBMusic {
  * PNSSong生的
  */
 export interface PNSSongMMusic {
-    name?: any;
     id: number;
     size: number;
     extension: string;
@@ -202,7 +196,6 @@ export interface PNSSongMMusic {
  * PNSSong生的
  */
 export interface PNSSongLMusic {
-    name?: any;
     id: number;
     size: number;
     extension: string;
@@ -216,7 +209,6 @@ export interface PNSSongLMusic {
  * PNSSong生的
  */
 export interface PNSSongHMusic {
-    name?: any;
     id: number;
     size: number;
     extension: string;
@@ -247,13 +239,6 @@ export interface PNSSongPrivilege {
     preSell: boolean;
     playMaxbr: number;
     downloadMaxbr: number;
-    maxBrLevel: string,
-    playMaxBrLevel: string,
-    downloadMaxBrLevel: string,
-    plLevel: string,
-    dlLevel: string,
-    flLevel: string,
-    rscl?: any,
     freeTrialPrivilege: PNSSongPrivilegeFreeTrialPrivilege;
     chargeInfoList: PNSSongPrivilegeChargeInfoList[];
 }
@@ -263,15 +248,44 @@ export interface PNSSongPrivilege {
 export interface PNSSongPrivilegeFreeTrialPrivilege {
     resConsumable: boolean;
     userConsumable: boolean;
-    listenType?: any
+   
 }
 /**
  * PNSSong生的PNSSongPrivilege省的
  */
 export interface PNSSongPrivilegeChargeInfoList {
     rate: number;
-    chargeUrl?: any,
-    chargeMessage?: any,
     chargeType: number;
 
 }
+
+export interface PersonalizedMv {
+    id: number;
+    type: number;
+    name: string;
+    copywriter: string;
+    picUrl: string;
+    canDislike: boolean;
+    trackNumberUpdateTime?: any;
+    duration: number;
+    playCount: number;
+    subed: boolean;
+    artists: {
+        id: number;
+        name: string;
+    }[];
+    artistName: string;
+    artistId: number;
+    alg: string;
+}
+
+export interface DjProgram {
+	id: number;
+	type: number;
+	name: string;
+	copywriter: string;
+	picUrl: string;
+	canDislike: boolean;
+	trackNumberUpdateTime?: any;
+}
+

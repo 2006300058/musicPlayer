@@ -5,16 +5,16 @@
  */
 export function useNumberFormat(number: number): string | number {
     if(number > Math.pow(10, 8) ) {
-        return Number(number / Math.pow(10, 8))+ '亿'
+        return Number((number / Math.pow(10, 8)).toFixed(1))+ '亿'
     }
     if(number > Math.pow(10, 7) ) {
-        return Number(number / Math.pow(10, 7))+ '千万'
+        return Number((number / Math.pow(10, 7)).toFixed(1))+ '千万'
     }
     if(number > Math.pow(10, 6) ) {
-        return Number(number / Math.pow(10, 6))+ '百万'
+        return Number((number / Math.pow(10, 6)).toFixed(1))+ '百万'
     }
     if(number > Math.pow(10, 4) ) {
-        return Number(number / Math.pow(10, 4))+ '万'
+        return Number((number / Math.pow(10, 4)).toFixed(1))+ '万'
     }
     return number;
 
