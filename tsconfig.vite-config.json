@@ -3,6 +3,6 @@
     "include": ["vite.config.*"],
     "compilerOptions": {
         "composite": true,
-        "types": ["nodes", "vitest"]
+        "types": ["node", "vitest"]
     }
 }

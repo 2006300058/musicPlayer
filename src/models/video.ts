@@ -191,7 +191,7 @@ export interface VideoDataRelateSongPrivilege {
 	preSell: boolean;
 }
 
-//获取独家放送
+/**获取独家放送*/
 export interface PersonalizedPrivateContent {
 	id: number;
 	url: string;

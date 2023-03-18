@@ -37,6 +37,7 @@ export async function useSongUrl(id: number) {
     const {data} =  await http.get<{data: SongUrl[]}>('/song/url', {id: id})
     
     return data.first()
+    
 }
 
 export async function useDetail(id: number) {
@@ -64,8 +65,31 @@ export async function useTopListDetail() {
     const {list} = await http.get<{list: TopListDetail[]}>('/toplist/detail')
     return list
 }
+/**调用此接口 , 可获取推荐 mv  /personalized/mv*/
+export async function usePersonalizedMv() {
+    const {result} = await http.get<{result: PersonalizedMv[]}>('personalized/mv')
+    return result
+}
 
+export async function usePersonalizedPrivateContentList(limit: number = 10, offset: number = 0) {
+    const {result} = await http.get<{ result: PersonalizedPrivateContent[] }>('personalized/privatecontent/list', {
+        limit: limit,
+        offset: offset
+    })
+    return result
+}
+/**调用此接口 , 可获取视频标签列表 `/video/group/list`*/
+export async function useVideoGroupList() {
+    const {data} = await http.get<{data: VideoGroup[]}>('video/group/list')
+    return data
+}
 
+export async function useVideoTimelineRecommend(offset: number = 0) {
+    const {datas} = await http.get<{datas: Video[]}>('video/timeline/recommend',{
+        offset: offset
+    })
+    return datas
+}
 
 
 

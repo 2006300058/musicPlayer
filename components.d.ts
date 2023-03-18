@@ -9,8 +9,29 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Banner: typeof import('./src/components/common/Banner.vue')['default']
+    CoverPlay: typeof import('./src/components/common/CoverPlay.vue')['default']
+    ElImage: typeof import('element-plus/es')['ElImage']
+    Footer: typeof import('./src/components/layout/footer/Footer.vue')['default']
+    Header: typeof import('./src/components/layout/header/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
+    IconPark: typeof import('./src/components/common/IconPark.vue')['default']
+    Menu: typeof import('./src/components/layout/menu/Menu.vue')['default']
+    MenuList: typeof import('./src/components/layout/menu/MenuList.vue')['default']
+    MoreText: typeof import('./src/components/common/MoreText.vue')['default']
+    PlayerAction: typeof import('./src/components/layout/footer/PlayerAction.vue')['default']
+    PlayerController: typeof import('./src/components/layout/footer/PlayerController.vue')['default']
+    PlayerSlider: typeof import('./src/components/layout/footer/PlayerSlider.vue')['default']
+    PlayerSong: typeof import('./src/components/layout/footer/PlayerSong.vue')['default']
+    PlayerVolumeSilder: typeof import('./src/components/layout/footer/PlayerVolumeSilder.vue')['default']
+    PlayList: typeof import('./src/components/layout/playList/PlayList.vue')['default']
+    PlayListSongItem: typeof import('./src/components/layout/playList/PlayListSongItem.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SearchPop: typeof import('./src/components/layout/header/SearchPop.vue')['default']
+    SearchSuggest: typeof import('./src/components/layout/header/SearchSuggest.vue')['default']
+    SongListItem: typeof import('./src/components/common/SongListItem.vue')['default']
+    Title: typeof import('./src/components/common/Title.vue')['default']
+    UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }
 }
