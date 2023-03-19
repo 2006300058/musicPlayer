@@ -20,6 +20,7 @@ export interface SearchSuggest {
     albums: SearchSuggestAlbums[],
     artists: SearchSuggestArtists[],
     songs: SearchSuggestSongs[],
+	playlists: SearchSuggestPlaylists[],
     order: string[]
 }
 
@@ -115,4 +116,22 @@ export interface SearchSuggestSongsAlbumArtist {
 	img1v1Url: string;
 	img1v1: number;
 	trans?: any;
+}
+
+export interface SearchSuggestPlaylists {
+	id: number;
+	name: string;
+	coverImgUrl: string;
+	creator?: any;
+	subscribed: boolean;
+	trackCount: number;
+	userId: number;
+	playCount: number;
+	bookCount: number;
+	specialType: number;
+	officialTags?: any;
+	action?: any;
+	actionType?: any;
+	description?: any;
+	highQuality: boolean;
 }

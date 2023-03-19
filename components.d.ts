@@ -11,8 +11,11 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Banner: typeof import('./src/components/common/Banner.vue')['default']
     CoverPlay: typeof import('./src/components/common/CoverPlay.vue')['default']
+    ElAvatar: typeof import('element-plus/es')['ElAvatar']
     ElImage: typeof import('element-plus/es')['ElImage']
+    ElInput: typeof import('element-plus/es')['ElInput']
     ElPopover: typeof import('element-plus/es')['ElPopover']
+    ElScrollbar: typeof import('element-plus/es')['ElScrollbar']
     Footer: typeof import('./src/components/layout/footer/Footer.vue')['default']
     Header: typeof import('./src/components/layout/header/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
