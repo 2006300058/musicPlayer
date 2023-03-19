@@ -90,6 +90,16 @@ export async function useVideoTimelineRecommend(offset: number = 0) {
     })
     return datas
 }
+/**调用此接口 , 传入搜索关键词可获得搜索建议 , 搜索结果同时包含单曲 , 歌手 , 歌单 ,mv 信息 调用例子 : /search/suggest?keywords= 海阔天空 /search/suggest?keywords= 海阔天空&type=mobile */
+export async function useSearchSuggest(keywords: string) {
+    const {result} = await http.get<{result: SearchSuggest}>('search/suggest',{keywords: keywords})
+    return result
+}
+/**说明 : 调用此接口,可获取热门搜索列表 //调用例子 : /search/hot/detail */
+export async function useSearchHotDetail() {
+    const {data} = await http.get<{data: SearchHotDetail[] }>('/search/hot/detail')
+    return data
+}
 
 
 

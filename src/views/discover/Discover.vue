@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-
+//发现页
 import Personalized from './Personalized.vue';
 import PersonalizedNewSong from './PersonalizedNewSong.vue';
 import Banner from '@/components/common/Banner.vue';

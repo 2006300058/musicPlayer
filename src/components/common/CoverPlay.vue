@@ -4,7 +4,7 @@
       <div class="mask flex justify-center items-center">
         <IconPark :icon="PlayOne"
                   theme="filled"
-                  class="text-white play-icon opacity-0 transition-opacity hover:text-teal-400" :size="50"
+                  class="text-white play-icon opacity-0 transition-opacity hover:text-red-500" :size="50"
                   @click="onPlay"/>
       </div>
       <div

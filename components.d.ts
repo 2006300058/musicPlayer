@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     Banner: typeof import('./src/components/common/Banner.vue')['default']
     CoverPlay: typeof import('./src/components/common/CoverPlay.vue')['default']
     ElImage: typeof import('element-plus/es')['ElImage']
+    ElPopover: typeof import('element-plus/es')['ElPopover']
     Footer: typeof import('./src/components/layout/footer/Footer.vue')['default']
     Header: typeof import('./src/components/layout/header/Header.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
