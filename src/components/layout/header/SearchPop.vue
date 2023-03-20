@@ -18,7 +18,8 @@
                 <div class="pb-2.5">
                   <div v-if="showHot">
                     <div  class="pt-2 pb-2 px-2.5 border-b-1 border-gray-400">热门搜索</div>
-                    <div v-for="(item, index) in searchHot" :key="item.searchWord" class="py-2.5 px-2.5 hover-text cursor-pointer flex justify-between items-center text-sm border-b-0.5 border-gray-400">
+                    <div v-for="(item, index) in searchHot" :key="item.searchWord" class="py-2.5 px-2.5 hover-text cursor-pointer flex justify-between items-center text-sm border-b-0.5 border-gray-400" @click="hotClick(item.searchWord)"
+                    >
                         <div>
                         <span class="mr-1.5">{{ index+1 }}.</span>
                         <span>{{ item.searchWord }}</span>

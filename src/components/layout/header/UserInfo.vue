@@ -1,7 +1,8 @@
 <template>
     <div class="justify-between items-center flex">
-        <ElAvatar size="small" round class="bg-gray-200 mr-2" :src="''"></ElAvatar>
-        <span class="login" @click="centerDialogVisible=true">点击登录 </span>
+        <ElAvatar size="small" round class="bg-gray-200 mr-2" :src="profile?.avatarUrl ?? ''"></ElAvatar>
+        <span class="text-sm ml-1.5" v-if="isLogin">{{ profile.nickname }}</span>
+        <span class="login" @click="centerDialogVisible=true" v-else>点击登录 </span>
     </div>
     <div >
         <el-dialog v-model="centerDialogVisible" center width="330px" append-to-body title="登录">
