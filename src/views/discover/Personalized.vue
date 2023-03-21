@@ -1,7 +1,7 @@
 <template>
     <div>
         <Title title="你的专属歌单"/>
-        <div class="grid grid-flow-row grid-clos-3 lg:grid-cols-5 gap-5
+        <div class="grid grid-flow-row grid-cols-3 lg:grid-cols-5 gap-5
         2xl:grid-cols-10">
             <div v-for="(item, index) in personalized.slice(0,10)"
                 :key="index" 

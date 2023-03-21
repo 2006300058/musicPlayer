@@ -1,5 +1,5 @@
 <template>
-    <div class="text-xl py-3 mt-2 flex items=center">
+    <div class="text-xl py-3 mt-2 flex items=center font-bold">
         <div>{{ title }}</div>
         <IconPark :icon="Right" size="25" :stroke-width="2"/>
     </div>

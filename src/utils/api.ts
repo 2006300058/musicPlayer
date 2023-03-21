@@ -101,6 +101,11 @@ export async function useSearchHotDetail() {
     return data
 }
 
+export async function usePersonalizedDjProgram() {
+    const {result} = await http.get<{result: DjProgram[]}>('/personalized/djprogram')
+    return result
+}
+
 
 
 

@@ -5,10 +5,10 @@
 //:root 是 CSS 伪类选择器，它用于选中 HTML 文档中的根元素（即 <html> 标签），可以用来定义全局的 CSS 变量。通过在 :root 中定义变量，可以让这些变量在全局范围内生效，同时方便地实现主题切换等功能。
 //在使用 :root 定义全局 CSS 变量时，需要使用 -- 前缀来定义变量名，例如：
 :root {
-    --el-color-primary: #34d399 !important;
+    --el-color-primary: #ee420e !important;
     --el-color-primary-light-1: #065f46 !important;
     --el-color-primary-light-2: #047857 !important;
-    --el-color-primary-light-3: #059669 !important;
+    --el-color-primary-light-3: #963a05 !important;
     --el-color-primary-light-4: #10b981 !important;
     --el-color-primary-light-5: #34d399 !important;
     --el-color-primary-light-6: #6ee7b7 !important;
@@ -22,7 +22,7 @@
 //深色模式
 @media (prefers-color-scheme: dark) {
     :root {
-      --el-color-primary: #059669 !important; 
+      --el-color-primary: #963a05 !important; 
       --el-color-primary-light-9: #57534e !important;
       --el-border-color-base: #57534e !important;
       --el-text-color-regular: #e2e8f0 !important;
@@ -36,7 +36,9 @@
 }
 
 html,body {
-    font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif ;
+    font-family:
+    'HarmonyOS Sans SC' 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
     @apply text-slate-700 bg-white;
     @apply dark:bg-[#1e1e1f] dark:text-slate-100; //tailwind深色模式
 

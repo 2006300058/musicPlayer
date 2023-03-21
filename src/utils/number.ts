@@ -10,9 +10,6 @@ export function useNumberFormat(number: number): string | number {
     if(number > Math.pow(10, 7) ) {
         return Number((number / Math.pow(10, 7)).toFixed(1))+ '千万'
     }
-    if(number > Math.pow(10, 6) ) {
-        return Number((number / Math.pow(10, 6)).toFixed(1))+ '百万'
-    }
     if(number > Math.pow(10, 4) ) {
         return Number((number / Math.pow(10, 4)).toFixed(1))+ '万'
     }

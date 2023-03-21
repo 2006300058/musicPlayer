@@ -1,6 +1,6 @@
 <template>
     <div class="w-screen h-screen flex items-stretch overflow-hidden"> 
-        <div class="w-64 h-screen flex-shrink-0">
+        <div class="w-60 h-screen flex-shrink-0">
             <Menu/>
         </div>
         <div class="flex-1 flex flex-col">
@@ -8,12 +8,12 @@
                 <Header/>
             </div>
             <div class="flex-1 overflow-hidden">
-                <ELScrollbar>
+                <ElScrollbar>
                 <!-- 自动调节容器；左右外边距为auto，水平居中对齐 -->
                     <div class="container mx-auto">
                         <RouterView/>
                     </div>
-                </ELScrollbar>
+                </ElScrollbar>
             </div>
             <div class="h-20">
                 <Footer/>
