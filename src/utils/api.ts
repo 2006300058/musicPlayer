@@ -106,6 +106,18 @@ export async function usePersonalizedDjProgram() {
     return result
 }
 
+export async function userArtistList(pageData: { type: number, area: number, initial: string, page: number, limit: number}) {
+    const res = await http.get<{artists: Artist[]}>('artist/list', {
+        type: pageData.type,
+        area: pageData.area,
+        initial: pageData.initial,
+        page: pageData.page,
+        limit: pageData.limit,
+        offset: (pageData.page -1) * pageData.limit
+    })
+    return res.artists
+}
+
 
 
 

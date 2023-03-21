@@ -45,7 +45,7 @@
     @apply flex bg-red-600 rounded-full justify-center items-center h-8
     text-sm transition-all;
     @apply text-white;
-    @apply hover:bg-emerald-700;
+    @apply hover:bg-red-600;
 }
 
 .button-outline {
@@ -54,11 +54,11 @@
 }
 
 .button-sm {
-    @apply h-7 text-xs;
+    @apply h-7 text-sm;
 }
 
 .button-dc {
     @apply flex bg-[#e6e6e6] rounded justify-center items-center h-8 text-sm transition-all cursor-pointer;
     @apply dark:bg-[#303031] dark:text-white;
-    @apply hover:text-red-400;
+    @apply hover:text-[#f5f5f5];
 }

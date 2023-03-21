@@ -1,21 +1,21 @@
 <template>
     <div v-if="suggestData" v-for="order in suggestData.order">
         <div class="pt-2 pb-1.5 px-2.5 border-x-0.5  shadow text-lg flex">{{ getTilte(order) }}</div>
-        <div v-if="order === 'songs'" v-for="item in suggestData.songs" :key="item.id" class="py-1.5 px-1.5 hover-bg-main text-sm cursor-pointer">
+        <div v-if="order === 'songs'" v-for="item in suggestData.songs" :key="item.id" class="py-1.5 px-1.5 hover-bg-main text-sm cursor-pointer"  @click="play(item.id)">
             <span class="text-red-400">{{ item.name }}</span>
             <span class="pl-1.5">-- {{ item.artists[0]?.name }}</span>
         </div>
-        <div v-if="order === 'artists'" v-for="item in suggestData.artists" class="py-1.5 px-2.5 hover-bg-main text-sm cursor-pointer flex items-center">
+        <div v-if="order === 'artists'" v-for="item in suggestData.artists" class="py-1.5 px-2.5 hover-bg-main text-sm cursor-pointer flex items-center"  @click="routerPush('artistDetail',item.id)">
             <el-avatar size="small" :src="item.img1v1Url"/>
             <span class="text-red-400 ml-2 text-sm">{{ item.name }}</span>
         </div>
         <div v-if="order === 'albums'" v-for="item in suggestData.albums"
         class="hover-bg-main  py-1.5 px-2.5 cursor-pointer truncate "
-        >
+        @click="routerPush('albums',item.id)">
             <span class="text-red-400 text-sm">{{ item.name }}</span>
             <span class="ml-1">-- {{ item.artist.name }}</span>
         </div>
-        <div v-if="order === 'playlists'" v-for="item in suggestData.playlists" class="hover-bg-main py-1.5 px-2.5 cursor-pointer flex">
+        <div v-if="order === 'playlists'" v-for="item in suggestData.playlists" class="hover-bg-main py-1.5 px-2.5 cursor-pointer flex"  @click="routerPush('playlist',item.id)">
             <el-avatar :src="item.coverImgUrl" size="small"/>
             <span class="text-red-400 text-sm ml-2 flex-1 truncate flex-1 w-1">{{ item.name }}</span>
         </div>
