@@ -21,7 +21,15 @@ export async function useLogin(phone: string, password: string) {
         code: number,
         cookie: string,
         token: string
-     }>("login/cellphone", {phone: phone, password: password})
+     }>("login/cellphone", {phone: phone, password: password, timestamp: new Date().getTime()})
+}
+/**邮箱登录 */
+export async function useLoginEmail(email: string, password: string) {
+    return await http.get<{
+        code: number,
+        cookie: string,
+        token: string,
+    }>('login/', {email: email, password: password, timestamp: new Date().getTime()})
 }
 
 export async function useLoginStatus() {
@@ -118,7 +126,31 @@ export async function userArtistList(pageData: { type: number, area: number, ini
     return res.artists
 }
 
+/** 高质量歌单*/
+export async function usePlaylistHighqualityTags() {
+    const {tags} = await http.get<{tags: PlaylistHighqualityTag[]}>('playlist/highquality/tags')
+    return tags
+}
+/** 调用此接口 , 可获取精品歌单
+可选参数 : cat: tag, 比如 " 华语 "、" 古风 " 、" 欧美 "、" 流行 ", 默认为 "全部",可从歌单分类接口获取(/playlist/catlist)
+limit: 取出歌单数量 , 默认为 20
+before: 分页参数,取上一页最后一个歌单的 updateTime 获取下一页数据*/
+export async function usePlaylistHighquality(params?: {limit?: number, before?:number, cat: string}) {
+    return await http.get<{playlists: PlaylistDetail[], total: number, more: boolean, lasttime: number}>('top/playlist/highquality', params)
+}
+/**获取视频标签列表 
+说明 : 调用此接口 , 可获取视频标签列表  
 
+**接口地址 :** `/video/group/list`
+
+**调用例子 :** `/video/group/list` */
+export async function useVideoGroup(id?: number, offset?: number) {
+    const {datas} = await http.get<{ datas: Video[] }>(id? 'video/group' : 'video/timeline/all', {
+        id: id,
+        offset: offset
+    })
+    return datas
+}
 
 
 

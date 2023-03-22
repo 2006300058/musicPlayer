@@ -29,7 +29,7 @@
 
 <script setup lang="ts">
 import Title from '@/components/common/Title.vue';
-import {onMounted, toRefs} from "vue";
+import {onMounted, toRefs, onUnmounted, } from "vue";
 import {useRouter} from "vue-router";
 import CoverPlay from "@/components/common/CoverPlay.vue";
 import {useMusicStore} from "@/stores/music";
@@ -39,6 +39,9 @@ const {getTopListDetailData} = useMusicStore()
 const {toplistDetailData} = toRefs(useMusicStore())
 const router = useRouter()
 
+// onMounted(async () => {
+//   await getTopListDetailData()
+// })
 onMounted(async () => {
   await getTopListDetailData()
 })

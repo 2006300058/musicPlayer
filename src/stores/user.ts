@@ -1,6 +1,6 @@
 import {defineStore} from 'pinia'
 import type{ UserProfile } from '@/models/user'
-import { useLogin, useLoginStatus } from '@/utils/api'
+import { useLogin, useLoginStatus, useLoginEmail } from '@/utils/api'
 
 export const useUserStore = defineStore("user", {
     state: () => {
@@ -15,8 +15,8 @@ export const useUserStore = defineStore("user", {
         isLogin : state => {return state.profile?.userId > 0}
     },
     actions: {
-        async login(phone: string, password: string) {
-            const res = await useLogin(phone, password)
+        async login(email: string, password: string) {
+            const res = await useLoginEmail(email, password)
             if(res.code == 200) {
                 this.token = res.token
                 this.cookie = res.cookie
