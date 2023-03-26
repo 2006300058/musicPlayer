@@ -7,7 +7,7 @@ declare global {
         /**
          * 获取数组第一个元素
          */
-        first<T>(this: T[]): T
+       first<T>(this: T[]): T
 
         last<T>(this: T[]): T
         sample<T>(this: T[]): T

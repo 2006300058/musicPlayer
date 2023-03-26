@@ -1,3 +1,4 @@
+import { first } from 'lodash';
 
 import type { Banner } from "@/models/banner";
 import type { DjProgram, Personalized, PersonalizedMv, PersonlizedNewSong } from "@/models/personalized";
@@ -44,13 +45,15 @@ export async function useLoginStatus() {
 export async function useSongUrl(id: number) {
     const {data} =  await http.get<{data: SongUrl[]}>('/song/url', {id: id})
     
-    return data.first()
+    //return data.first()
+    return data[0]
     
 }
 
 export async function useDetail(id: number) {
     const {songs} = await http.get<{songs: Song[]}>('/song/detail', {ids: id})
-    return songs.first()
+   // return songs.first()
+   return songs[0]
     
 }
 /**说明 : 调用此接口 , 可对 MV,电台,视频点赞 调用例子 : /banner, /banner?type=2 */
@@ -151,6 +154,40 @@ export async function useVideoGroup(id?: number, offset?: number) {
     })
     return datas
 }
+/**获取歌单详情必选参数 : id : 歌单 id
 
+可选参数 : s : 歌单最近的 s 个收藏者
+接口地址 : /playlist/detail
+调用例子 : /playlist/detail?id=24381616 */
+export async function usePlayListDetail(id: number, s: number = 8) {
+    const {playlist} = await http.get<{ playlist: PlaylistDetail }>('/playlist/detail', {id: id, s: s})
+    console.log(playlist.description)
+    return playlist
+}
 
+export async function usePlayListTrackAll(id: number) {
 
+    const {songs} = await http.get<{ songs: Song[] }>('playlist/track/all', {id: id})
+    return songs
+}
+/**文档没有，可能是歌手细节 */
+export async function userArtistDetail(id: number) {
+    const {data} = await http.get<{data: ArtistDetail}>('artist/detail', {id: id})
+    return data
+}
+/**应该是获取歌手的歌曲 */
+export async function useArtistSongs(id: number, order: string = 'time', limit: number = 10, offset: number = 0) {
+    return await http.get<{songs: Song[]}>('artist/songs', {id: id,order: order, limit: limit, offset: offset})
+}
+/**获取歌手专辑
+说明 : 调用此接口 , 传入歌手 id, 可获得歌手专辑内容
+**必选参数 :** `id`: 歌手 id
+**可选参数 :** `limit`: 取出数量 , 默认为 50
+`offset`: 偏移数量 , 用于分页 , 如 :( 页数 -1)\*50, 其中 50 为 limit 的值 , 默认
+为 0
+**接口地址 :** `/artist/album`
+**调用例子 :** `/artist/album?id=6452&limit=30` ( 周杰伦 )
+ */
+export async function useArtistAlbum(id: number, limit: number = 10, offset: number = 0) {
+    return await http.get<{hotAlbums: Album[]}>('artist/album', {id: id, limit: limit, offset: offset})
+}

@@ -30,7 +30,7 @@ const {getPersonalized} = useMusicStore()
 onMounted(async () => {
     getPersonalized()
     
-    console.log("22",personalized)
+    //console.log("22",personalized)
 })
 </script>
 

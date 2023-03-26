@@ -39,7 +39,12 @@ export interface Song {
     mst: number,
     cp: number,
     mv: number,
-    publishTime: number
+    publishTime: number,
+    h: songH;
+    m: songM;
+    l: songL;
+    al:songAl;
+    ar:songAr[]
 }
 
 export interface songAr {

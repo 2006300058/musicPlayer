@@ -28,7 +28,7 @@
 import Menu from '@/components/layout/menu/Menu.vue';
 import Header from '@/components/layout/header/Header.vue';
 import Footer from '@/components/layout/footer/Footer.vue';
-import PlayList from './playlist/PlayList.vue';
+import PlayList from '@/components/layout/playList/PlayList.vue';
 
 </script>
 

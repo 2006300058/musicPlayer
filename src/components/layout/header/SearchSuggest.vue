@@ -11,7 +11,7 @@
         </div>
         <div v-if="order === 'albums'" v-for="item in suggestData.albums"
         class="hover-bg-main  py-1.5 px-2.5 cursor-pointer truncate "
-        @click="routerPush('albums',item.id)">
+        @click="routerPush('album',item.id)">
             <span class="text-red-400 text-sm">{{ item.name }}</span>
             <span class="ml-1">-- {{ item.artist.name }}</span>
         </div>

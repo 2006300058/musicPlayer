@@ -37,8 +37,8 @@ export const usePlayerStore = defineStore({
         nextSong(state): Song {
             const {thisIndex, playListCount} = this
             if(thisIndex === playListCount-1){
-                return state.playList.first()
-            }
+                return state.playList[0]   
+             }
             else {
                 const nextIndex = thisIndex + 1
                 return state.playList[nextIndex]
@@ -94,7 +94,7 @@ export const usePlayerStore = defineStore({
         },
         async play(id: number) {
             if(id == this.id) return;
-            this.isPlaying = false
+            //this.isPlaying = false
             const data = await useSongUrl(id)
             console.log(data)
             this.audio.src = data.url;
@@ -163,7 +163,7 @@ export const usePlayerStore = defineStore({
             if(!this.song.id) return;
             this.isPause = false,
             this.isPlaying = true,
-            this.audio.play()
+            this.audio.play()   
         },
         setPause() {
             if(!this.song.id) return;
@@ -184,7 +184,7 @@ export const usePlayerStore = defineStore({
         setVolume(n: number) {
             n = n > 100 ? 100 : n
             n = n < 0 ? 0 : n
-            this.audio.volume = n
+            this.audio.volume = n / 100
             this.volume = n
             localStorage.setItem('PLAYER-VOLUME', n.toString())
         },

@@ -1,6 +1,6 @@
 <template>
     <PlaylistHighqualityTags @cat-change="catChange"/>
-    <div class="grid gap-4 grid-flex-row grid-cols-5 xl:grid-cols-8  mt-3">
+    <div class="grid gap-4 grid-flex-row grid-cols-5 xl:grid-cols-6  mt-3">
         <div v-for="(item, index) in list" class="py-1.5" @click="router.push({name: Pages.playlist, query:{id: item.id}})">
             <CoverPlay :pic-url="item.coverImgUrl" show-play-count :play-count="item.playCount" />
             <div class="pt-1.5 ">{{ item.name }}</div>
