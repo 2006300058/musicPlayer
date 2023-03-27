@@ -9,7 +9,7 @@
                     <IconPark :icon="MusicList" size="22" :stroke-width="3" title="播放列表" @click="showPlayList=true"/>
                     <span  class="text-lg ml-1">{{ playListCount }}</span>
             </div>
-        </div>   
+        </div>    
     </div>
 </template>
 
@@ -19,6 +19,7 @@ import { MusicList, TextMessage } from '@icon-park/vue-next';
 import { usePlayerStore } from '@/stores/player';
 import { useFormatDuring } from '@/utils/number';
 import { storeToRefs } from 'pinia';
+import PlayList from '../playList/PlayList.vue';
 
 const {currentTime, duration, playListCount, showPlayList} = storeToRefs(usePlayerStore())
 </script>

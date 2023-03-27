@@ -132,6 +132,7 @@ export const usePlayerStore = defineStore({
                 this.currentTime = 0
                 this.audio.play()
             }, 1500)
+
         },
         next() {
             if(this.loopType === 2){

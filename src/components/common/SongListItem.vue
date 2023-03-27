@@ -5,7 +5,7 @@
   
         <div class="items-center flex flex-1 w-10 flex-shrink-0">
           <IconPark :icon="Like" size="16"
-                    class="text-gray-500 mr-1 cursor-pointer hover:text-red-400"/>
+                    class="text-gray-500 mx-2 cursor-pointer hover:text-red-400"/>
           <div class="truncate " style="max-width: 75%;">
             <small class="text-sm">{{ song.name }}</small>
           </div>
@@ -76,7 +76,7 @@
   }
   
   .playing {
-    @apply bg-red-100 dark:bg-stone-800;
+    @apply bg-gradient-to-l from-teal-500 to-red-400 text-white dark:bg-stone-800 text-white;
   }
   </style>
   
