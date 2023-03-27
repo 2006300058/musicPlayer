@@ -2,7 +2,7 @@
     <div class="my-5">
         <Title title="独家放送"/>
         <div class="grid gap-5 grid-flow-row grid-cols-3 lg:grid-cols-4">
-            <div v-for="(item, index) in personalizedPrivateContent.slice(0,4)" :key="item.id" @click="router.push({name: 'playlist' , query:{id: item.id}})"
+            <div v-for="(item, index) in personalizedPrivateContent.slice(0,4)" :key="item.id" @click="router.push({name: 'mvDetail' , query:{id: item.id}})"
             >
                 <CoverPlay v-bind:pic-url="item.sPicUrl" video :name="item.name"
                  />

@@ -36,7 +36,7 @@
                             <span class="text-sm pl-1">视频</span>
                         </span>
                     </template>
-                    <Video/>
+                    <Video :id="id"/>
                 </el-tab-pane>
                 <el-tab-pane>
                     <template #label>
@@ -45,7 +45,7 @@
                             <span class="text-sm pl-1">详情</span>
                         </span>
                     </template>
-                    <Desc/>
+                    <Desc :id="id"/>
                 </el-tab-pane>
             </el-tabs>
         </div>

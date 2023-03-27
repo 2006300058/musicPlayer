@@ -42,7 +42,7 @@
 }
 
 .button {
-    @apply flex bg-red-600 rounded-full justify-center items-center h-8
+    @apply flex bg-red-500 rounded-full justify-center items-center h-8
     text-sm transition-all;
     @apply text-white;
     @apply hover:bg-red-600;

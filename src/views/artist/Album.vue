@@ -1,6 +1,13 @@
 <template>
-    <div class="mt-5">
-
+    <div class="mt-5" >
+        <div class="grid grid-flow-row gap-4 grid-cols-4 xl:grid-cols-8">
+            <div v-for="(item, index) in list" :key="item.id" @click="router.push({name: 'album', query:{id: item.id}})" class=" ">
+                <CoverPlay :pic-url="item.picUrl"/>
+                <div class="mt-1.5 truncate">{{ item.name }}</div>
+                <div class="mt-1.5 trunacte text-gray-400">{{  item.publishTime.toDate()  }}</div>     
+            </div>
+            
+        </div>
     </div>
 </template>
 

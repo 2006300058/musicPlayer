@@ -6,7 +6,7 @@
         <div class="flex items-center">
             <IconPark :icon="TextMessage" size="22" :stroke-width="3" class="hover-text mr-2" title="歌词"/>
             <div class="flex  items-center hover-text " @click="showPlayList=true">
-                    <IconPark :icon="MusicList" size="22" :stroke-width="3" title="播放列表"/>
+                    <IconPark :icon="MusicList" size="22" :stroke-width="3" title="播放列表" @click="showPlayList=true"/>
                     <span  class="text-lg ml-1">{{ playListCount }}</span>
             </div>
         </div>   

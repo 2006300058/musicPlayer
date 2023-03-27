@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div >
         <div class="flex flex-row justify-between items-center">
             <div class="flex">
                 <button class="button-outline w-28 mr-4" @click="playAll">
@@ -55,7 +55,7 @@ import  IconPark from '@/components/common/IconPark.vue';
 const {pushPlayList, play} = usePlayerStore()
 
 const playAll = () => {
-    pushPlayList(false, ...songList.value)
+    pushPlayList(true, ...songList.value)
     play(songList.value.first().id)
 }
 

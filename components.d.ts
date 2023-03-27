@@ -47,4 +47,7 @@ declare module '@vue/runtime-core' {
     Title: typeof import('./src/components/common/Title.vue')['default']
     UserInfo: typeof import('./src/components/layout/header/UserInfo.vue')['default']
   }
+  export interface ComponentCustomProperties {
+    vLoading: typeof import('element-plus/es')['ElLoadingDirective']
+  }
 }

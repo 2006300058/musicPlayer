@@ -1,3 +1,5 @@
+
+import type{ ArtistDescIntroduction } from './../models/artist_detail';
 import { first } from 'lodash';
 
 import type { Banner } from "@/models/banner";
@@ -191,3 +193,58 @@ export async function useArtistSongs(id: number, order: string = 'time', limit: 
 export async function useArtistAlbum(id: number, limit: number = 10, offset: number = 0) {
     return await http.get<{hotAlbums: Album[]}>('artist/album', {id: id, limit: limit, offset: offset})
 }
+/**### 获取歌手描述
+
+说明 : 调用此接口 , 传入歌手 id, 可获得歌手描述
+
+**必选参数 :** `id`: 歌手 id
+
+**接口地址 :** `/artist/desc`
+
+**调用例子 :** `/artist/desc?id=6452` ( 周杰伦 ) */
+export async function useArtistDesc(id: number) {
+    const desc = await http.get< ArtistDesc>('artist/desc', {id: id})
+    return desc
+}
+/**### 获取歌手 mv
+
+说明 : 调用此接口 , 传入歌手 id, 可获得歌手 mv 信息 , 具体 mv 播放地址可调
+用`/mv`传入此接口获得的 mvid 来拿到 , 如 :
+`/artist/mv?id=6452`,`/mv?mvid=5461064`
+
+**必选参数 :** `id`: 歌手 id, 可由搜索接口获得
+
+**接口地址 :** `/artist/mv`
+
+**调用例子 :** `/artist/mv?id=6452` */
+export async function useArtistMv(id: number) {
+    const {mvs} = await http.get<{mvs: Mv[]}>('artist/mv', {id: id})
+    return mvs
+}
+/**### 获取专辑内容
+
+说明 : 调用此接口 , 传入专辑 id, 可获得专辑内容
+
+**必选参数 :** `id`: 专辑 id
+
+**接口地址 :** `/album`
+
+**调用例子 :** `/album?id=32311` */
+export async function useAlbum(id: number) {
+    const {songs, album} = await http.get<{songs: Song[], album: Album}>('album', {id: id})
+    return {songs, album}
+}
+/**### mv 地址 
+
+说明 : 调用此接口 , 传入 mv id,可获取 mv 播放地址
+
+**可选参数 :** `id`: mv id
+
+**接口地址 :** `/mv/url`
+
+**调用例子 :**`/mv/url?id=5436712` */
+export async function useMvUrl(id: number) {
+    const {data} = await http.get<{data: MvUrl}>('/mv/url', {id: id})
+    return data
+}
+

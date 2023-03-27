@@ -11,7 +11,7 @@
                 <div class="mr-4">专辑数：{{artistDetail.artist.albumSize}}  </div>
                 <div class="mr-4">MV数：{{artistDetail.artist.mvSize}}  </div>
             </div>
-            <div class="flex gap-x-4 mt-5  justify-self-stretch">
+            <div class="flex gap-x-4 mt-5 ml-5 justify-self-stretch">
                 <button class="button w-32 items-center justify-center" >
                     <IconPark :icon="Plus" :size="20"/>
                     <span class="ml-2 text-sm mr-2 ">关注</span>
